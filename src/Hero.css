@@ -1,0 +1,118 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap");
+
+/* Hero Section */
+.hero {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  overflow: hidden;
+  padding: 25vh 0;
+}
+
+/* Call-to-Action Button */
+.button {
+  background: linear-gradient(135deg, #00c8ff, #0263f5);
+  color: #ffffff;
+  border: none;
+  padding: 14px 30px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 30px;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0px 4px 10px rgba(255, 204, 0, 0.3);
+}
+
+.button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0px 6px 15px rgba(255, 204, 0, 0.5);
+}
+
+/* Background Images - Stacked for Smooth Transition */
+.hero-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 2s ease-in-out;
+  z-index: 0;
+}
+
+/* Show the active background */
+.hero-background.active {
+  opacity: 1;
+}
+
+/* Dark Overlay */
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 1920px;
+  background: rgba(0, 0, 0, 0.55);
+  z-index: 1;
+}
+
+/* Content Wrapper */
+.hero-overlay {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 900px;
+  padding: 30px;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeIn 1s ease-out forwards;
+}
+
+/* Heading */
+.hero h2 {
+  font-size: 48px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+  transition: all 0.3s ease-in-out;
+}
+
+.hero h2:hover {
+  transform: scale(1.05);
+  color: #ffcc00;
+}
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .hero h2 {
+    font-size: 42px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero h2 {
+    font-size: 36px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero h2 {
+    font-size: 30px;
+  }
+}

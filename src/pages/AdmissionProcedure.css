@@ -1,0 +1,101 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap");
+
+* {
+  font-family: "Inter", sans-serif !important;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* General Styles */
+body {
+  background-color: #f8f9fa;
+}
+
+/* Main Container */
+.admission-procedure-container {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  text-align: center;
+}
+
+/* Tabs Container */
+.admission-tabs {
+  display: flex;
+  justify-content: center;
+  background: #e9ecef;
+  border-radius: 12px;
+  width: fit-content;
+  margin: 30px auto 20px;
+  position: relative;
+  overflow: hidden;
+  padding: 6px 0;
+}
+
+/* Active Tab Background Animation */
+.admission-tabs::before {
+  content: "";
+  position: absolute;
+  height: calc(100% - 12px);
+  background: #007bff;
+  border-radius: 12px;
+  transition: transform 0.3s ease-in-out, width 0.3s ease-in-out;
+  z-index: 0;
+  width: calc(50% - 6px);
+  left: 6px;
+}
+
+/* Dynamic Background Movement */
+.admission-tabs[data-active="PG"]::before {
+  transform: translateX(100%);
+}
+
+.admission-tabs[data-active="UG"]::before {
+  transform: translateX(0);
+}
+
+/* Individual Tab */
+.admission-tab {
+  padding: 12px 30px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 16px;
+  color: #333;
+  position: relative;
+  transition: color 0.3s ease-in-out;
+  border-radius: 8px;
+  z-index: 1;
+}
+
+/* Active Tab */
+.admission-tab.active {
+  color: white;
+}
+
+/* Hover Effect */
+.admission-tab:hover {
+  color: #000;
+}
+
+/* Content Section */
+.admission-content {
+  font-size: 16px;
+  color: #555;
+  margin-top: 20px;
+  text-align: left;
+}
+
+.admission-content h3 {
+  font-size: 20px;
+  color: #007bff;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.admission-content p {
+  margin: 10px 0;
+}

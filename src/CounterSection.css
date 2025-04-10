@@ -1,0 +1,124 @@
+.counter-section {
+  background-color: #1d4f91;
+  color: white;
+  padding: 3.75rem 1.25rem; /* 60px 20px */
+  text-align: center;
+}
+
+@media (max-width: 575.98px) {
+  .counter-section {
+    padding: 2.5rem 0.9375rem; /* 40px 15px */
+  }
+}
+
+.counter-container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.counter-title {
+  font-size: 2rem; /* 32px */
+  font-weight: bold;
+  margin-bottom: 1.875rem; /* 30px */
+  color: #d4d4d4;
+}
+
+@media (max-width: 575.98px) {
+  .counter-title {
+    font-size: 1.5rem; /* 24px */
+  }
+}
+
+@media (min-width: 576px) and (max-width: 991.98px) {
+  .counter-title {
+    font-size: 1.75rem; /* 28px */
+  }
+}
+
+.counter-grid {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2.5rem; /* 40px */
+}
+
+@media (max-width: 575.98px) {
+  .counter-grid {
+    gap: 1rem;
+  }
+}
+
+.counter-box {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 1.875rem; /* 30px */
+  border-radius: 0.625rem; /* 10px */
+  flex: 1 1 200px;
+  max-width: 250px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.counter-box:hover {
+  transform: scale(1.05);
+}
+
+/* Mobile: 2 in a row */
+@media (max-width: 575.98px) {
+  .counter-box {
+    flex: 1 1 48%;
+    max-width: 48%;
+    padding: 1.5625rem; /* 25px */
+  }
+}
+
+/* Small tablets: 2 in a row */
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .counter-box {
+    flex: 1 1 45%;
+    max-width: 45%;
+  }
+}
+
+/* Tablets: 3 or 4 in a row depending on container width */
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .counter-box {
+    flex: 1 1 22%;
+    max-width: 22%;
+  }
+}
+
+.counter-number {
+  font-size: 2.25rem; /* 36px */
+  font-weight: bold;
+  margin-bottom: 0.625rem; /* 10px */
+}
+
+@media (max-width: 575.98px) {
+  .counter-number {
+    font-size: 1.75rem; /* 28px */
+  }
+}
+
+@media (min-width: 576px) and (max-width: 991.98px) {
+  .counter-number {
+    font-size: 2rem; /* 32px */
+  }
+}
+
+.counter-label {
+  font-size: 1.125rem; /* 18px */
+  color: #f0f0f0;
+  text-align: center;
+}
+
+@media (max-width: 575.98px) {
+  .counter-label {
+    font-size: 0.9375rem; /* 15px */
+  }
+}
+
+@media (min-width: 576px) and (max-width: 991.98px) {
+  .counter-label {
+    font-size: 1rem; /* 16px */
+  }
+}

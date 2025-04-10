@@ -1,0 +1,92 @@
+/* Main Container */
+.accreditation-container {
+  max-width: 1200px;
+  margin: auto;
+  text-align: center;
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+/* Title Styling */
+.title {
+  font-size: 28px;
+  font-weight: bold;
+  color: #1d4f91;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 5px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.title::after {
+  content: "";
+  width: 80%;
+  height: 4px;
+  background-color: #ffcc00;
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 2px;
+}
+
+/* Grid Layout */
+.accreditation-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+/* Accreditation Card */
+.accreditation-card {
+  background: #ffffff;
+  border-radius: 8px;
+  padding: 15px;
+  text-align: center;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+
+/* Hover Effect */
+.accreditation-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Accreditation Image */
+.accreditation-image {
+  width: 200px;
+  height: 200px;
+  object-fit: contain;
+  margin-bottom: 10px;
+}
+
+/* Name Styling */
+.accreditation-name {
+  font-size: 18px;
+  font-weight: bold;
+  color: #1d4f91;
+}
+
+/* Expandable Content */
+.accreditation-content {
+  overflow: hidden;
+  transition: max-height 0.4s ease-in-out, opacity 0.3s ease-in-out;
+  opacity: 0;
+}
+
+.accreditation-card.expanded .accreditation-content {
+  opacity: 1;
+}
+
+/* Responsive Layout */
+@media screen and (max-width: 768px) {
+  .accreditation-grid {
+    grid-template-columns: repeat(1, 1fr); /* 1 card per row for mobile */
+  }
+}

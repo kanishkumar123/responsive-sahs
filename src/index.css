@@ -1,0 +1,127 @@
+:root {
+  --mobile: 576px;
+  --tablet: 768px;
+  --desktop: 992px;
+  --large-desktop: 1200px;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;
+  font-family: Arial, sans-serif;
+  line-height: 1.5;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Responsive typography */
+@media (max-width: 576px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 992px) {
+  html {
+    font-size: 18px;
+  }
+}
+
+/* Responsive layout helpers */
+.container {
+  width: 100%;
+  padding: 0 1rem;
+  margin: 0 auto;
+}
+
+@media (min-width: 576px) {
+  .container {
+    max-width: 540px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    max-width: 960px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+  }
+}
+
+/* Base styles for the toast container */
+.Toastify__toast {
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  font-family: "Arial", sans-serif;
+  font-size: 16px;
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Slide-in animation */
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.Toastify__toast--animate {
+  animation: slideIn 0.5s forwards;
+}
+
+/* Success toast specific styles */
+.Toastify__toast--success {
+  background-color: #000;
+  color: #ffffff;
+}
+
+/* Error toast specific styles */
+.Toastify__toast--error {
+  background-color: #f44336;
+  color: #ffffff;
+}
+
+/* Info toast specific styles */
+.Toastify__toast--info {
+  background-color: #2196f3;
+  color: #ffffff;
+}
+
+/* Warning toast specific styles */
+.Toastify__toast--warning {
+  background-color: #ff9800;
+  color: #ffffff;
+}
+
+/* Custom progress bar */
+.Toastify__progress-bar {
+  height: 4px;
+  background-color: #4caf50;
+}

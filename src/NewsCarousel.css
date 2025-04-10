@@ -1,0 +1,148 @@
+.carousel-container {
+  position: relative;
+  width: 100%;
+  max-width: 960px;
+  margin: 50px auto;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  background: #fff;
+}
+
+.carousel-wrapper {
+  width: 100%;
+  overflow: hidden;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  width: 100%;
+}
+
+.carousel-slide {
+  min-width: 100%;
+  padding: 20px 20px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.carousel-image {
+  width: 100%;
+  max-height: 540px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 20px;
+}
+
+.carousel-text {
+  text-align: center;
+  max-width: 90%;
+}
+
+.carousel-text h3 {
+  font-size: 2rem;
+  color: #1d4f91;
+  /* margin-bottom: 12px; */
+}
+
+.carousel-text p {
+  font-size: 1.1rem;
+  color: #444;
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.2);
+  color: #fff;
+  border: none;
+  padding: 12px 16px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  z-index: 2;
+  border-radius: 50%;
+  transition: background 0.3s ease;
+}
+
+.carousel-btn:hover {
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.carousel-btn.prev {
+  left: 10px;
+}
+
+.carousel-btn.next {
+  right: 10px;
+}
+
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+  gap: 8px;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #ccc;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-bottom: 20px;
+}
+
+.dot.active {
+  background-color: #002147;
+}
+
+@media (max-width: 768px) {
+  .dot {
+    width: 10px;
+    height: 10px;
+  }
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .carousel-slide {
+    padding: 20px 10px;
+  }
+
+  .carousel-image {
+    height: 250px;
+  }
+
+  .carousel-text h3 {
+    font-size: 1.5rem;
+  }
+
+  .carousel-text p {
+    font-size: 1rem;
+  }
+
+  .carousel-btn {
+    padding: 10px;
+    font-size: 1.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .carousel-text h3 {
+    font-size: 1.25rem;
+  }
+
+  .carousel-text p {
+    font-size: 0.95rem;
+  }
+
+  .carousel-btn {
+    padding: 8px;
+    font-size: 1rem;
+  }
+}

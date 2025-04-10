@@ -1,0 +1,125 @@
+.scholarship-container {
+  background-color: #d9edf7; /* Light blue background */
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 1200px; /* Keeps max width */
+  height: 600px; /* Fixed height */
+  text-align: center;
+  margin: 40px auto; /* Centers the div */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  overflow-y: auto; /* Enables scrolling when content exceeds height */
+}
+
+/* Custom scrollbar for a smooth look */
+.scholarship-container::-webkit-scrollbar {
+  width: 8px;
+}
+
+.scholarship-container::-webkit-scrollbar-thumb {
+  background: #1d4f91;
+  border-radius: 10px;
+}
+
+.scholarship-container::-webkit-scrollbar-track {
+  background: #d9edf7;
+}
+
+/* Scholarship title */
+.scholarship-title {
+  background-color: #1d4f91;
+  color: #fff;
+  padding: 10px;
+  font-size: 20px;
+  font-weight: bold;
+  border-radius: 5px;
+  display: inline-block;
+}
+
+/* Cards container - Grid Layout */
+.scholarship-cards {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(400px, 1fr)
+  ); /* Responsive grid */
+  gap: 15px;
+  margin-top: 15px;
+}
+
+/* Individual Card */
+.scholarship-card {
+  background: #ffffff;
+  border-radius: 6px;
+  padding: 12px;
+  cursor: pointer;
+  transition: box-shadow 0.3s ease-in-out, transform 0.2s ease-in-out;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Hover effect */
+.scholarship-card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Expandable card effect */
+.scholarship-card.expanded {
+  background: #f8f9fa;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Card Header */
+.scholarship-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 16px;
+  font-weight: bold;
+  color: #1d4f91;
+}
+
+/* Arrow icon */
+.arrow {
+  font-size: 18px;
+  color: #1d4f91;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Rotate arrow when expanded */
+.arrow.rotated {
+  transform: rotate(180deg);
+}
+
+/* Expandable content */
+.scholarship-content {
+  overflow: hidden;
+  transition: max-height 0.4s ease-in-out, opacity 0.3s ease-in-out;
+  opacity: 0;
+}
+
+.scholarship-card.expanded .scholarship-content {
+  opacity: 1;
+}
+
+/* Description inside expanded card */
+.scholarship-description {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #333;
+  text-align: left;
+  line-height: 1.5;
+  padding: 5px 0;
+}
+
+/* Responsive Layout */
+@media screen and (max-width: 1200px) {
+  .scholarship-cards {
+    grid-template-columns: repeat(2, 1fr); /* 2 cards per row for tablets */
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .scholarship-cards {
+    grid-template-columns: repeat(1, 1fr); /* 1 card per row for mobiles */
+  }
+}

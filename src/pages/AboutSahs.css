@@ -1,0 +1,177 @@
+.about-sahs-container {
+  background-color: #f8f9fa;
+}
+
+.container {
+  margin: auto;
+  background: white;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+.title {
+  font-size: 28px;
+  font-weight: bold;
+  color: #1d4f91;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 5px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.title::after {
+  content: "";
+  width: 80%;
+  height: 4px;
+  background-color: #ffcc00;
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 2px;
+}
+
+h2 {
+  color: #002147;
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+p {
+  line-height: 1.8;
+  text-align: justify;
+  color: #333;
+  font-size: 17px;
+}
+
+.about-section {
+  margin-bottom: 40px;
+}
+
+.about-section ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.about-section ul li {
+  padding: 8px 0;
+  font-size: 16px;
+  position: relative;
+  padding: 16px;
+  color: #fff;
+}
+
+.about-section ul li::before {
+  position: absolute;
+  left: 0;
+  color: #002147;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.values-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.value-box {
+  background: #002147;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-weight: bold;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+  font-size: 15px;
+  text-align: center;
+  transition: all 0.3s ease-in-out;
+}
+
+.value-box:hover {
+  background: #0056b3;
+  transform: scale(1.05);
+}
+
+.academic-container {
+  max-width: 1200px;
+  margin: auto;
+  background: white;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.academic-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+}
+
+.academic-list li {
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+  padding: 8px 0;
+  font-weight: 500;
+}
+
+.academic-list li::before {
+  content: "✔";
+  color: #007bff;
+  font-size: 20px;
+  margin-right: 10px;
+}
+
+.highlight {
+  font-weight: bold;
+  color: #0056b3;
+  background: rgba(0, 123, 255, 0.1);
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+    padding: 25px;
+  }
+
+  h1,
+  h2 {
+    font-size: 20px;
+  }
+
+  p {
+    font-size: 16px;
+  }
+
+  .values-grid {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .value-box {
+    width: 100%;
+    text-align: center;
+  }
+}
