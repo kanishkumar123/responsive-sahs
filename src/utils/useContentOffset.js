@@ -1,27 +1,29 @@
 import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 
 const useContentOffset = () => {
+  const location = useLocation(); // 👈 detect route change
+
   useEffect(() => {
     const topHeader = document.querySelector(".top-header-wrapper");
     const navbar = document.querySelector(".navbar-sticky-wrapper");
-    const contentWrappers = document.querySelectorAll(
-      ".content-wrapper, .page-with-nav"
-    );
 
     const updateOffset = () => {
       const headerHeight = topHeader?.offsetHeight || 0;
       const navbarHeight = navbar?.offsetHeight || 0;
       const totalOffset = headerHeight + navbarHeight;
 
-      contentWrappers.forEach((el) => {
-        el.style.marginTop = `${totalOffset}px`;
-      });
+      document
+        .querySelectorAll(".content-wrapper, .page-with-nav")
+        .forEach((el) => {
+          el.style.marginTop = `${totalOffset}px`;
+        });
     };
 
-    // Initial run
-    updateOffset();
+    // Initial run + on route change
+    setTimeout(updateOffset, 0); // ensure DOM is ready
 
-    // Observe top header class changes
+    // Observer for header class changes
     const observer = new MutationObserver(updateOffset);
     if (topHeader) {
       observer.observe(topHeader, {
@@ -30,14 +32,13 @@ const useContentOffset = () => {
       });
     }
 
-    // Update on window resize
     window.addEventListener("resize", updateOffset);
 
     return () => {
       observer.disconnect();
       window.removeEventListener("resize", updateOffset);
     };
-  }, []);
+  }, [location]); // 👈 re-run effect when route changes
 };
 
 export default useContentOffset;

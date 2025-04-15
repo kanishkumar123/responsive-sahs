@@ -1,7 +1,8 @@
 .why-choose {
   background-color: #f9f9f9;
-  padding: 0px 20px;
   text-align: center;
+  margin-top: 30px;
+  margin-bottom: 30px;
 }
 
 .container {
@@ -13,19 +14,19 @@
   font-size: 36px;
   font-weight: bold;
   color: #2c3e50;
-  margin-bottom: 10px;
 }
 
 .section-subtitle {
   font-size: 18px;
+  text-align: center;
   color: #555;
-  margin-bottom: 30px;
 }
 
 .features-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 20px;
+  padding: 30px;
 }
 
 .feature-box {
